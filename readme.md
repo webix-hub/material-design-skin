@@ -11,7 +11,7 @@ How to use
 - copy files into `codebase` folder of Webix UI package
 - use skin file on page as any other skin
 
-```
+```html
 <html>
 <head>
 	<script type="codebase/webix.js"></script>
@@ -39,7 +39,7 @@ Example - http://webix.com/demos/material/admin-app/index.html#!/app/typography
 - text_danger
 - text_muted
 
-```
+```js
 webix.ui({
 	rows:[{
 		template:"Some text",
@@ -60,7 +60,7 @@ webix.ui({
 - button_transparent
 - button_raised
 
-```
+```js
 webix.ui({
 	view:"button",
 	css:"button_success button_raised"
@@ -74,7 +74,7 @@ webix.ui({
 - action_icon
 - danger_icon
 
-```
+```js
 webix.ui({
 	view:"icon",
 	icon:"users",
@@ -89,7 +89,7 @@ webix.ui({
 - bg_panel
 - bg_panel_raised
 
-```
+```js
 webix.ui({
 	rows:[
 		{ template:"A" },
@@ -104,7 +104,7 @@ Material layout
 
 Skin adds one more type of layout.
 
-```
+```js
 webix.ui({
 	type:"material",
 	rows:[
