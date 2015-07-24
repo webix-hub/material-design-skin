@@ -2165,11 +2165,18 @@ div.webix_modal_cover {
 .webix_cal_inactive{
     background:#888;
 }
-
-.webix_cal_day_disabled{
-  color: lighten(@fontColor, 40%);
-  background:#f4f4f4 !important;
+.webix_cal_day_disabled, .webix_cal_day_disabled.webix_cal_event{
+	color: lighten(@fontColor, 40%);
+	background:#f4f4f4;
 }
+.webix_hours, .webix_minutes{
+	.webix_cal_day_disabled, .webix_cal_day_disabled.webix_cal_event{
+		background: @backColor;
+		font-weight:normal;
+		text-decoration: line-through;
+	}
+}
+
 
 //zoom to month and year
 .webix_cal_month_name{
@@ -2650,7 +2657,7 @@ input.webixtype_next{
 .webix_inp_label{
 	float:left;
 	//padding-top: ( @inputHeight - @formFontSize - 4 )/2;
-	padding-top:@skin_input_y_padding;
+	padding-top: 1px;
 	padding-left:@skin_input_y_padding;
 	padding-right:@skin_content_padding * 0.75;
 	text-overflow:ellipsis;
@@ -6853,7 +6860,7 @@ label.webix_required:after{
 .webix_view .webix_layout_form input,
 .webix_view .webix_layout_form .webix_inp_static,
 .webix_view .webix_layout_form select {
-  border: none;
+  border: 1px solid @backColor;
   border-bottom: 1px solid @inputBorderColor;
   padding: 0;
   line-height: 24px;

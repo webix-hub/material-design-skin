@@ -1,6 +1,6 @@
 /*
 @license
-webix UI v.2.4.7
+webix UI v.2.5.0
 This software is covered by Webix Commercial License.
 Usage without proper license is prohibited.
 (c) XB Software Ltd.
@@ -271,7 +271,8 @@ div.webix_modal_cover{background-color:#000;cursor:default;filter:alpha(opacity=
 .webix_cal_event{font-weight:700;color:#C66200}
 .webix_cal_outside{color:#bababa}
 .webix_cal_inactive{background:#888}
-.webix_cal_day_disabled{color:#bababa;background:#f4f4f4!important}
+.webix_cal_day_disabled,.webix_cal_day_disabled.webix_cal_event{color:#bababa;background:#f4f4f4}
+.webix_hours .webix_cal_day_disabled,.webix_hours .webix_cal_day_disabled.webix_cal_event,.webix_minutes .webix_cal_day_disabled,.webix_minutes .webix_cal_day_disabled.webix_cal_event{background:#fff;font-weight:400;text-decoration:line-through}
 .webix_cal_month_name{cursor:pointer}
 .webix_cal_block{float:left;text-align:center;cursor:pointer}
 .webix_selected{background:#fff;color:#545454}
@@ -341,7 +342,7 @@ input.webixtype_next{border-right-width:0;border-radius:6px 0 0 6px;-webkit-bord
 .webix_el_box{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:2px;height:100%;width:100%;font-size:15px}
 .webix_el_combo input,.webix_el_datepicker input,.webix_el_search input,.webix_el_text input{height:100%;padding:0 10px;border:1px solid #edf2f1;color:#545454;font-size:15px;font-family:Roboto;-webkit-appearance:none;border-radius:0;padding-top:4px\0}
 .webix_inp_label,.webix_inp_top_label,.webix_label_right{color:#545454;text-transform:none;font-size:15px}
-.webix_inp_label{float:left;padding-top:2px;padding-left:2px;padding-right:7.5px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.webix_inp_label{float:left;padding-top:1px;padding-left:2px;padding-right:7.5px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
 .webix_inp_top_label{float:none;padding:2px 2px 0}
 .webix_inp_bottom_label{font-size:13px;color:#616161}
 .webix_label_right{padding-left:7.5px}
@@ -1279,7 +1280,7 @@ label.webix_required:after{padding-left:4px;content:"*";color:red}
 .fa,.webix_icon,.webix_icon_btn,.webix_input_icon{padding-right:5px}
 .webix_view.webix_form{color:#545454;font-family:Roboto;font-size:15px;font-weight:400}
 .webix_view.webix_form .webix_control input{font-family:Roboto}
-.webix_view .webix_layout_form .webix_inp_static,.webix_view .webix_layout_form input,.webix_view .webix_layout_form select{border:none;border-bottom:1px solid #cfddda;padding:0;line-height:24px;background:0 0}
+.webix_view .webix_layout_form .webix_inp_static,.webix_view .webix_layout_form input,.webix_view .webix_layout_form select{border:1px solid #fff;border-bottom:1px solid #cfddda;padding:0;line-height:24px;background:0 0}
 .webix_view .webix_layout_form .webix_inp_static:focus,.webix_view .webix_layout_form input:focus,.webix_view .webix_layout_form select:focus{border-color:#3498db}
 .webix_view .webix_layout_form .webix_inp_static.error,.webix_view .webix_layout_form input.error,.webix_view .webix_layout_form select.error{border-color:#ff5252}
 .webix_view .webix_layout_form textarea{border:1px solid #cfddda}
