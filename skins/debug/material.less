@@ -5401,41 +5401,43 @@ label.webix_required:after{
 }
 
 //basic colors
-@mainThemeColor: #3498db;
-@mainBackgroundColor: #FFFFFF;
-@mainBorderColor: #edf2f1;
+@mainColor: #3498db;
+
+
+@borderColor: #edf2f1;
 @fontColor: #545454;
 
-.spaceBackgroundColor() when (lightness(@mainBackgroundColor) >= 70%) {
-  background-color: darken(@mainBackgroundColor, 3%);
+.spaceBackgroundColor() when (lightness(@layoutBgColor) >= 70%) {
+  background-color: darken(@layoutBgColor, 3%);
 };
-.spaceBackgroundColor() when (lightness(@mainBackgroundColor) < 70%) {
-  background-color: lighten(@mainBackgroundColor, 20%);
+.spaceBackgroundColor() when (lightness(@layoutBgColor) < 70%) {
+  background-color: lighten(@layoutBgColor, 20%);
 };
 
-@primaryColor: @mainThemeColor;
+@primaryColor: @mainColor;
 @successColor: #388E3C;
 @infoColor: #03A9F4;
 @warningColor: #FF9800;
 @dangerColor: #ff5252;
 
 // Layout colors
-@layoutBgColor: @mainBackgroundColor;
-@layoutBorderColor: mainBorderColor();
+@layoutBgColor: #FFFFFF;
+@layoutBorderColor: @borderColor;
 
-@mainColor : @mainBackgroundColor; //#f0a000;
+
 @alterColor : @mainBackgroundColor;
-@selectColor: @mainBackgroundColor;
+@selectColor: #F2F2F2 ;
 
-@backColor: @mainBackgroundColor;
+@backColor: #FFFFFF;
+@mainBackgroundColor: @backColor;
 //@foreColor: #000000;
 //@fontColor: @foreColor;
 @foreColor: @mainBackgroundColor;
-@linkFontColor: @mainThemeColor;
-@linkHoverFontColor: @mainThemeColor;
-@altFontColor:@foreColor;
-@titleLinkFontColor: lighten(@mainThemeColor, 20%);
-@titleLinkHoverFontColor: @mainThemeColor;
+@linkFontColor: @mainColor;
+@linkHoverFontColor: @mainColor;
+@altFontColor: #ADADAD;
+@titleLinkFontColor: lighten(@mainColor, 20%);
+@titleLinkHoverFontColor: @mainColor;
 
 // LAYOUTS
 
@@ -5448,18 +5450,18 @@ label.webix_required:after{
 @listItemHoverFontColor: @listItemFontColor;
 
 // BUTTONS
-@buttonBgColor: transparent;
-@buttonHoverBgColor: fade(@mainThemeColor, 20%);
-@buttonActiveBgColor: @mainThemeColor;
-@buttonFontColor: @mainThemeColor;
-@buttonHoverFontColor: @mainThemeColor;
+@buttonBgColor: @buttonColor;
+@buttonHoverBgColor: fade(@mainColor, 20%);
+@buttonActiveBgColor: @mainColor;
+@buttonFontColor: @mainColor;
+@buttonHoverFontColor: @mainColor;
 @buttonActiveFontColor: @mainBackgroundColor;
 @buttonBorderWidth: 0px;
 @buttonTransparentBorderWidth: 1px;
 @buttonBorderRadius: 2px;
 @buttonRaisedFontColor: @mainBackgroundColor;
-@buttonRaisedBgColor: @mainThemeColor;
-@buttonRaisedHoverBgColor: lighten(@mainThemeColor, 5%);
+@buttonRaisedBgColor: @mainColor;
+@buttonRaisedHoverBgColor: lighten(@mainColor, 5%);
 @buttonRaisedHoverFontColor: @mainBackgroundColor;
 
 @buttonDangerBgColor: transparent;
@@ -5637,7 +5639,7 @@ label.webix_required:after{
 }
 
 
-//@lightMainColor: lighten(desaturate(@mainColor, 65%),46%);
+
 //-------------------------------------------///
 //            Sync with skin.js              ///
 //-------------------------------------------///
@@ -5667,7 +5669,7 @@ label.webix_required:after{
 @layoutRadius: 2px;
 @spaceLayoutShadowColor: rgba(0, 0, 0, 0.2);
 
-@borderColor:	@mainBorderColor;
+@mainBorderColor:	@borderColor;
 @templatePadding: 10px;
 @lightBorderColor:	@mainBorderColor;
 @layoutIcons: "corners";
@@ -5683,7 +5685,7 @@ label.webix_required:after{
 }
 
 .layoutBarBG(){
-    background: @mainBackgroundColor;
+    background: @backColor;
 }
 .activeBarBG(){
     color:@fontColor;
@@ -5747,7 +5749,7 @@ label.webix_required:after{
     .layoutBarBG;
 }
 .webix_layout_accordion .webix_accordionitem_header:hover{
-    background: darken(@mainBackgroundColor, 10%);
+    background: darken(@backColor, 10%);
 }
 .webix_accordionitem.vertical > .webix_accordionitem_header .webix_accordionitem_button{
     .accIconUp;
@@ -5876,7 +5878,7 @@ label.webix_required:after{
 
 .webix_win_head {
   border: none;
-  border-top: 5px solid @mainThemeColor;
+  border-top: 5px solid @mainColor;
 }
 
 .webix_win_head > .webix_view > .webix_template {
@@ -5899,7 +5901,7 @@ label.webix_required:after{
 
 //selection
 @selectBorderColor: @lightBorderColor;
-@selectFontColor: @fontColor;
+@selectFontColor: #545454;
 
 
 .selectLine(){
@@ -5921,22 +5923,22 @@ label.webix_required:after{
 @dataPadding: 20px;
 .dataHeaderBg(){
   background: @alterColor;
-  color:@altFontColor;
+  //color:@altFontColor;
 }
 .dataHeaderFont(){
   //use view default
-  color:lighten(@fontColor, 15);
+  color:@altFontColor;
 }
 
 .webix_column>div, .webix_table_cell{
   border-bottom:1px solid @lightBorderColor;
 }
 
-.webix_column>div.webix_cell_select, 
-.webix_column>div.webix_column_select, 
+.webix_column>div.webix_cell_select,
+.webix_column>div.webix_column_select,
 .webix_column>div.webix_row_select {
-  color: @fontColor;
-  background: @menuHoverBgColor;
+  color: @selectFontColor;
+  background: @selectColor;
 }
 
 .webix_richfilter{
@@ -6025,13 +6027,18 @@ label.webix_required:after{
 }
 .webix_list .webix_list_item:hover,
 .webix_list .webix_list_item.webix_selected {
-  background-color: @menuHoverBgColor;
-  padding: 0px @listItemPaddingX;
-  border: none;
+	background-color: @menuHoverBgColor;
+	padding: 0px @listItemPaddingX;
+	border: none;
 }
+.webix_list .webix_list_item.webix_selected{
+	color: @selectFontColor;
+	background-color: @selectColor;
+}
+
 .webix_list .webix_list_item.webix_selected {
   background-color: @menuActiveBgColor;
-  box-shadow: 5px 0 @mainThemeColor inset;
+  box-shadow: 5px 0 @mainColor inset;
 }
 
 .webix_popup.webix_view {
@@ -6069,10 +6076,15 @@ label.webix_required:after{
     border-radius: 0;
     background: transparent;
   }
-    .webix_list_item:hover, .webix_list_item:active, .webix_list_item.webix_selected {
-    color: @menuFontColor;
-    background-color: @menuHoverBgColor;
-    text-decoration: none;
+    .webix_list_item:hover, .webix_list_item:active{
+	    background-color: @menuHoverBgColor;
+	    text-decoration: none;
+    }
+
+	.webix_list_item.webix_selected {
+	    color: @selectFontColor;
+	    background-color: @selectColor;
+	    text-decoration: none;
     }
   .webix_icon {
     color: @menuIconColor;
@@ -6099,7 +6111,8 @@ label.webix_required:after{
   font-weight: bold;
 }
 .webix_dtable_span.webix_selected {
-  background: @menuHoverBgColor;
+	color: @selectFontColor;
+    background: @selectColor;
 }
 
 @listPaddingX: 10px;
@@ -6142,13 +6155,13 @@ label.webix_required:after{
     right: 30px;
     padding: 0 4px;
     max-width: 80px;
-   
+
     .webix_label_icon {
       width: 10px;
       padding: 2px 0 0 0;
-    }   
+    }
   }
-  
+
   .webix_el_box input {
     padding-right: 80px;
   }
@@ -6177,8 +6190,8 @@ label.webix_required:after{
 
 .webix_el_tabbar {
   background: @tabbarBackground;
-  border-top: 1px solid @tabbarBorderColor; 
-  border-bottom: 1px solid @tabbarBorderColor; 
+  border-top: 1px solid @tabbarBorderColor;
+  border-bottom: 1px solid @tabbarBorderColor;
 }
 
 .webix_all_tabs {
@@ -6205,7 +6218,7 @@ label.webix_required:after{
   .tabFont;
   color: @tabSelectedFontColor;
     border: none;
-  border-bottom: 2px solid @tabSelectedBorderColor; 
+  border-bottom: 2px solid @tabSelectedBorderColor;
   padding-bottom: 0;
 }
 
@@ -6224,10 +6237,10 @@ label.webix_required:after{
   font-size: @titleFontSize;
 }
 
-@tableHeaderFontColor: lighten(@fontColor, 35%);
+@tableHeaderFontColor: @altFontColor;
 
-.webix_img_btn .webix_icon, 
-.webix_img_btn_top .webix_icon, 
+.webix_img_btn .webix_icon,
+.webix_img_btn_top .webix_icon,
 .webix_img_btn_abs .webix_icon {
   color: inherit;
 }
@@ -6244,9 +6257,9 @@ label.webix_required:after{
     text-transform:uppercase;
     font-size: @fontSize * 0.93;
 };
-.webix_ss_header, 
-.webix_ss_header TD, 
-.webix_ss_vscroll_header, 
+.webix_ss_header,
+.webix_ss_header TD,
+.webix_ss_vscroll_header,
 .webix_dd_drag_column {
   font-weight: bold;
   color: @tableHeaderFontColor;
@@ -6275,8 +6288,8 @@ label.webix_required:after{
 // buttons
 .ordinaryButton() {
   .ordinaryButtonCommon;
-  
-  &:hover, 
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonHoverFontColor;
@@ -6303,9 +6316,9 @@ label.webix_required:after{
   .ordinaryButtonCommon;
   .raised;
   color: @buttonRaisedFontColor;
-  background-color: @buttonRaisedBgColor;  
-  
-  &:hover, 
+  background-color: @buttonRaisedBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonRaisedHoverFontColor;
@@ -6315,7 +6328,7 @@ label.webix_required:after{
       color: @buttonRaisedBgColor;
     }
     color: @buttonRaisedHoverFontColor;
-    background-color: @buttonRaisedHoverBgColor;  
+    background-color: @buttonRaisedHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonRaisedHoverBgColor, 10%);
@@ -6330,15 +6343,15 @@ label.webix_required:after{
 }
 .ordinaryButtonActive() {
   color: @buttonActiveFontColor;
-  background-color: @buttonActiveBgColor;  
+  background-color: @buttonActiveBgColor;
 }
 
 .primaryButton() {
   .ordinaryButtonCommon;
   color: @buttonPrimaryFontColor;
-  background-color: @buttonPrimaryBgColor;  
-  
-  &:hover, 
+  background-color: @buttonPrimaryBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonPrimaryHoverFontColor;
@@ -6348,7 +6361,7 @@ label.webix_required:after{
       color: @buttonPrimaryRaisedFontColor;
     }
     color: @buttonPrimaryHoverFontColor;
-    background-color: @buttonPrimaryHoverBgColor;  
+    background-color: @buttonPrimaryHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonPrimaryHoverBgColor, 10%);
@@ -6365,9 +6378,9 @@ label.webix_required:after{
   .ordinaryButtonCommon;
   .raised;
   color: @buttonPrimaryRaisedFontColor;
-  background-color: @buttonPrimaryRaisedBgColor;  
-  
-  &:hover, 
+  background-color: @buttonPrimaryRaisedBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonPrimaryRaisedHoverFontColor;
@@ -6377,7 +6390,7 @@ label.webix_required:after{
       color: @buttonPrimaryRaisedBgColor;
     }
     color: @buttonPrimaryRaisedHoverFontColor;
-    background-color: @buttonPrimaryRaisedHoverBgColor;  
+    background-color: @buttonPrimaryRaisedHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonPrimaryRaisedHoverBgColor, 10%);
@@ -6395,9 +6408,9 @@ label.webix_required:after{
 .successButton() {
   .ordinaryButtonCommon;
   color: @buttonSuccessFontColor;
-  background-color: @buttonSuccessBgColor;  
-  
-  &:hover, 
+  background-color: @buttonSuccessBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonSuccessHoverFontColor;
@@ -6407,7 +6420,7 @@ label.webix_required:after{
       color: @buttonSuccessRaisedFontColor;
     }
     color: @buttonSuccessHoverFontColor;
-    background-color: @buttonSuccessHoverBgColor;  
+    background-color: @buttonSuccessHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonSuccessHoverBgColor, 10%);
@@ -6424,9 +6437,9 @@ label.webix_required:after{
   .ordinaryButtonCommon;
   .raised;
   color: @buttonSuccessRaisedFontColor;
-  background-color: @buttonSuccessRaisedBgColor;  
-  
-  &:hover, 
+  background-color: @buttonSuccessRaisedBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonSuccessRaisedHoverFontColor;
@@ -6436,7 +6449,7 @@ label.webix_required:after{
       color: @buttonSuccessRaisedBgColor;
     }
     color: @buttonSuccessRaisedHoverFontColor;
-    background-color: @buttonSuccessRaisedHoverBgColor;  
+    background-color: @buttonSuccessRaisedHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonSuccessRaisedHoverBgColor, 10%);
@@ -6453,9 +6466,9 @@ label.webix_required:after{
 .infoButton() {
   .ordinaryButtonCommon;
   color: @buttonInfoFontColor;
-  background-color: @buttonInfoBgColor;  
-  
-  &:hover, 
+  background-color: @buttonInfoBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonInfoHoverFontColor;
@@ -6465,7 +6478,7 @@ label.webix_required:after{
       color: @buttonInfoRaisedFontColor;
     }
     color: @buttonInfoHoverFontColor;
-    background-color: @buttonInfoHoverBgColor;  
+    background-color: @buttonInfoHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonInfoHoverBgColor, 10%);
@@ -6482,9 +6495,9 @@ label.webix_required:after{
   .ordinaryButtonCommon;
   .raised;
   color: @buttonInfoRaisedFontColor;
-  background-color: @buttonInfoRaisedBgColor;  
-  
-  &:hover, 
+  background-color: @buttonInfoRaisedBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonInfoRaisedHoverFontColor;
@@ -6494,7 +6507,7 @@ label.webix_required:after{
       color: @buttonInfoRaisedBgColor;
     }
     color: @buttonInfoRaisedHoverFontColor;
-    background-color: @buttonInfoRaisedHoverBgColor;  
+    background-color: @buttonInfoRaisedHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonInfoRaisedHoverBgColor, 10%);
@@ -6511,9 +6524,9 @@ label.webix_required:after{
 .warningButton() {
   .ordinaryButtonCommon;
   color: @buttonWarningFontColor;
-  background-color: @buttonWarningBgColor;  
-  
-  &:hover, 
+  background-color: @buttonWarningBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonWarningHoverFontColor;
@@ -6523,7 +6536,7 @@ label.webix_required:after{
       color: @buttonWarningRaisedFontColor;
     }
     color: @buttonWarningHoverFontColor;
-    background-color: @buttonWarningHoverBgColor;  
+    background-color: @buttonWarningHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonWarningHoverBgColor, 10%);
@@ -6540,9 +6553,9 @@ label.webix_required:after{
   .ordinaryButtonCommon;
   .raised;
   color: @buttonWarningRaisedFontColor;
-  background-color: @buttonWarningRaisedBgColor;  
-  
-  &:hover, 
+  background-color: @buttonWarningRaisedBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonWarningRaisedHoverFontColor;
@@ -6552,7 +6565,7 @@ label.webix_required:after{
       color: @buttonWarningRaisedBgColor;
     }
     color: @buttonWarningRaisedHoverFontColor;
-    background-color: @buttonWarningRaisedHoverBgColor;  
+    background-color: @buttonWarningRaisedHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonWarningRaisedHoverBgColor, 10%);
@@ -6569,9 +6582,9 @@ label.webix_required:after{
 .dangerButton() {
   .ordinaryButtonCommon;
   color: @buttonDangerFontColor;
-  background-color: @buttonDangerBgColor;  
-  
-  &:hover, 
+  background-color: @buttonDangerBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonDangerHoverFontColor;
@@ -6581,7 +6594,7 @@ label.webix_required:after{
       color: @buttonDangerHoverBgColor;
     }
     color: @buttonDangerHoverFontColor;
-    background-color: @buttonDangerHoverBgColor;  
+    background-color: @buttonDangerHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonDangerHoverBgColor, 10%);
@@ -6598,9 +6611,9 @@ label.webix_required:after{
   .ordinaryButtonCommon;
   .raised;
   color: @buttonDangerRaisedFontColor;
-  background-color: @buttonDangerRaisedBgColor;  
-  
-  &:hover, 
+  background-color: @buttonDangerRaisedBgColor;
+
+  &:hover,
   &:active {
     .webix_icon_btn {
       color: @buttonDangerRaisedHoverFontColor;
@@ -6610,7 +6623,7 @@ label.webix_required:after{
       color: @buttonDangerRaisedBgColor;
     }
     color: @buttonDangerRaisedHoverFontColor;
-    background-color: @buttonDangerRaisedHoverBgColor;  
+    background-color: @buttonDangerRaisedHoverBgColor;
   }
   &:active{
     background-color: darken(@buttonDangerRaisedHoverBgColor, 10%);
@@ -6629,9 +6642,9 @@ label.webix_required:after{
   border-radius: @buttonBorderRadius;
   .pageTitlesFont;
   color: @buttonTransparentFontColor;
-  background-color: @buttonTransparentBgColor;  
+  background-color: @buttonTransparentBgColor;
   padding: 0px 8px;
-  
+
   &:hover,
   &:active {
   }
@@ -6644,9 +6657,9 @@ label.webix_required:after{
   padding: 0;
 }
 
-.webix_el_button, 
-.webix_el_toggle, 
-.webixbutton {  
+.webix_el_button,
+.webix_el_toggle,
+.webixbutton {
   // ordinary button
   input, button {
     .ordinaryButton;
@@ -6654,7 +6667,7 @@ label.webix_required:after{
   &.button_raised {
     input, button {
       .ordinaryButtonRaised;
-    }     
+    }
   }
   // primary button
   &.button_primary {
@@ -6665,7 +6678,7 @@ label.webix_required:after{
       input, button {
         .primaryButtonRaised;
       }
-    } 
+    }
   }
   // success button
   &.button_success {
@@ -6676,7 +6689,7 @@ label.webix_required:after{
       input, button {
         .successButtonRaised;
       }
-    } 
+    }
   }
   // info button
   &.button_info {
@@ -6687,7 +6700,7 @@ label.webix_required:after{
       input, button {
         .infoButtonRaised;
       }
-    } 
+    }
   }
   // warning button
   &.button_warning {
@@ -6698,7 +6711,7 @@ label.webix_required:after{
       input, button {
         .warningButtonRaised;
       }
-    } 
+    }
   }
   // danger button
   &.button_danger {
@@ -6709,7 +6722,7 @@ label.webix_required:after{
       input, button {
         .dangerButtonRaised;
       }
-    } 
+    }
   }
 }
 
@@ -6724,7 +6737,7 @@ label.webix_required:after{
 .action_icon .webix_icon,
 .action_icon.webix_icon {
   &:hover {
-    color: @mainThemeColor;
+    color: @mainColor;
   }
 }
 
@@ -6735,24 +6748,24 @@ label.webix_required:after{
   }
 }
 
-.webix_el_button.button_transparent input, 
-.webix_el_toggle.button_transparent input, 
-.webix_el_button.button_transparent button, 
-.webix_el_toggle.button_transparent button, 
+.webix_el_button.button_transparent input,
+.webix_el_toggle.button_transparent input,
+.webix_el_button.button_transparent button,
+.webix_el_toggle.button_transparent button,
 .webixbutton.button_transparent{
   .transparentButton;
 }
 
-.webix_el_button.button_transparent input:hover, 
-.webix_el_toggle.button_transparent input:hover, 
-.webix_el_button.button_transparent button:hover, 
+.webix_el_button.button_transparent input:hover,
+.webix_el_toggle.button_transparent input:hover,
+.webix_el_button.button_transparent button:hover,
 .webix_el_toggle.button_transparent button:hover{
   background: rgba(0,0,0,0.05);
 }
 
-.webix_el_button.button_transparent input:active, 
-.webix_el_toggle.button_transparent input:active, 
-.webix_el_button.button_transparent button:active, 
+.webix_el_button.button_transparent input:active,
+.webix_el_toggle.button_transparent input:active,
+.webix_el_button.button_transparent button:active,
 .webix_el_toggle.button_transparent button:active{
   background: rgba(0,0,0,0.2);
 }
@@ -6762,8 +6775,8 @@ label.webix_required:after{
   vertical-align: middle;
 }
 
-.webix_icon, 
-.webix_icon_btn, 
+.webix_icon,
+.webix_icon_btn,
 .webix_input_icon, .fa {
   padding-right: 5px;
 }
@@ -6836,7 +6849,7 @@ label.webix_required:after{
 @iconFontColor: @fontColor;
 
 // Form
-@formFontFamily: "Roboto";
+@formFontFamily: @fontFamily;
 @formFontSize: 15px;
 @formFontWeight: normal;
 @formFontColor: @fontColor;
@@ -6850,7 +6863,7 @@ label.webix_required:after{
 }
 
 @inputBorderColor: darken(@mainBorderColor, 10%);
-@inputFocusedBorderColor: @mainThemeColor;
+@inputFocusedBorderColor: @mainColor;
 @inputErrorBorderColor: @dangerColor;
 
 .webix_view.webix_form .webix_control input {
@@ -6866,10 +6879,10 @@ label.webix_required:after{
   line-height: 24px;
   background: transparent;
   &:focus {
-    border-color: @inputFocusedBorderColor;
+     border-bottom-color: @inputFocusedBorderColor;
   }
   &.error {
-    border-color: @inputErrorBorderColor;
+	  border-bottom-color: @inputErrorBorderColor;
   }
 }
 
@@ -6898,7 +6911,7 @@ label.webix_required:after{
 ::-moz-placeholder {  /* Firefox 19+ */
   .placeholder;
 }
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
   .placeholder;
 }
 
@@ -6915,7 +6928,7 @@ label.webix_required:after{
   font-size: @labelFontSize;
   font-weight: @labelFontWeight;
 }
-
+/*
 .webix_radio_option .webix_inp_radio_border input {
   display: none;
 }
@@ -6929,21 +6942,77 @@ label.webix_required:after{
 }
 .webix_radio_1:after {
   background-position: 0 16px;
+}*/
+@checkBoxColor: lighten(@labelFontColor,20%);
+@radioSize: 12px;
+.webix_el_radio{
+	.webix_custom_radio:before{
+		content: " ";
+		background-color: lighten(@backColor,8%);
+	}
+	.webix_radio_1 .webix_custom_radio:before{
+		content: " ";
+		margin: (@radioSize - 6)/2;
+		border-radius: 50%;
+		display: block;
+		width: 6px;
+		#box > .sizing;
+		height: 6px;
+		background-color: @mainColor;
+	}
+	.webix_radio_1 .webix_custom_radio{
+		border:2px solid @mainColor;
+		box-shadow:none;
+		height: @radioSize;
+		width: @radioSize;
+	}
+	.webix_custom_radio{
+		display: block;
+		height: @radioSize;
+		width: @radioSize;
+		border:2px solid @checkBoxColor;
+	//	box-shadow:0 0 1px @fontColor inset;
+		border-radius: 50%;
+		background-color: lighten(@backColor,8%);
+	}
+
+	.webix_label_right{
+		color: @fontColor;
+		font-size: @fontSize;
+	}
 }
+
 
 .webix_el_checkbox .webix_inp_checkbox_border input {
   display: none;
 }
 
-.webix_el_checkbox .webix_inp_checkbox_border .webix_custom_checkbox {
-  display: inline-block;
-  content: "";
-  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgCAMAAAAsVwj+AAAASFBMVEUAAAAAAAAAmd4AAAAAAAAAmd4Amd4AAAAAmd4Amd4Amd4Amd4Amd4AAAAAAAAAmd4AAAAAmd4Amd4Amd4Amd4Amd4Amd4Amd4NjlYkAAAAF3RSTlMAjfJuZvfmf1IPt6DviGtkNpS7QhfPBNfjaCMAAACBSURBVCjPzY9REoMgDESXUIhaUFFb7n/TZuo4XcoFfH/7IJDFqo7QFZo9kRVuBjE7OM/C31n8r675QWTt6y9RiLgg1oYIaYU0opQQWDwxSoVwnr4jks78HrdaE0LY93Sd26MmBgxy5XPETLH8+9bu4NhoDzPH1C6WXpUFI125rv4H68oRP1WPvyYAAAAASUVORK5CYII=);
-  width: 16px;
-  height: 16px;
+
+.webix_custom_checkbox {
+	float: left;
+	position: relative;
+	top: 50%;
+	width: auto;
+	margin-top: -7px;
+	height: 12px;
+	width: 12px;
+	border-radius: 2px;
+	border:2px solid @checkBoxColor;
 }
-.webix_checkbox_1 .webix_custom_checkbox {
-  background-position: 0 16px;
+
+.webix_checkbox_1 .webix_custom_checkbox{
+	border-color: @mainColor;
+	background-color: @mainColor;
+}
+.webix_checkbox_1 .webix_custom_checkbox:before {
+	content: "\f00c";
+	color: @backColor;
+	font-family: FontAwesome;
+	font-size: 12px;
+	height: 12px;
+	display: block;
+	line-height: 12px;
+	width: 12px;
 }
 
 .webix_inp_label {
@@ -6951,7 +7020,7 @@ label.webix_required:after{
 }
 
 // Segment
-@segmentColor: #FFF;
+@segmentColor: @backColor;
 @segmentActive: @buttonActiveBgColor;
 @segmentHover: lighten(@buttonActiveBgColor, 40%);
 @segmentFontColor: @buttonFontColor;
@@ -6961,37 +7030,37 @@ label.webix_required:after{
 @segmentBorderWidth: @buttonBorderWidth;
 @segmentBorderRadius: @buttonBorderRadius;
 
-.webix_segment_0, 
-.webix_segment_1, 
+.webix_segment_0,
+.webix_segment_1,
 .webix_segment_N {
   color: @segmentFontColor;
   background: @segmentColor;
   border: none;
   border-top: 1px solid @segmentBorderColor;
   border-bottom: 1px solid @segmentBorderColor;
-  
+
   &:first-child {
     border-left: 1px solid @segmentBorderColor;
   }
-  
+
   &:last-child {
     border-right: 1px solid @segmentBorderColor;
   }
-  
+
   &:active {
     color: @segmentHoverFontColor;
     background: @segmentHover;
     border: none;
   }
-  
+
   &:hover {
     color: @segmentHoverFontColor;
     background: @segmentHover;
   }
 }
 
-.webix_segment_0.webix_selected, 
-.webix_segment_1.webix_selected, 
+.webix_segment_0.webix_selected,
+.webix_segment_1.webix_selected,
 .webix_segment_N.webix_selected {
   color: @segmentActiveFontColor;
   background: @segmentActive;
@@ -7003,7 +7072,7 @@ label.webix_required:after{
 
   &:hover:last-child {
     padding-right: 0px;
-    
+
   }
 }
 
@@ -7016,7 +7085,7 @@ label.webix_required:after{
 
 // Counter
 @counterFontSize: @fontSize * 1.71;
-.webix_view input.webix_inp_counter_prev, 
+.webix_view input.webix_inp_counter_prev,
 .webix_view input.webix_inp_counter_next {
   width: 30px;
   font-size: @counterFontSize;
@@ -7025,10 +7094,10 @@ label.webix_required:after{
 }
 
 // Combo
-.webix_el_combo .webix_input_icon, 
-.webix_el_richselect .webix_input_icon, 
-.webix_el_datepicker .webix_input_icon, 
-.webix_el_colorpicker .webix_input_icon, 
+.webix_el_combo .webix_input_icon,
+.webix_el_richselect .webix_input_icon,
+.webix_el_datepicker .webix_input_icon,
+.webix_el_colorpicker .webix_input_icon,
 .webix_el_search .webix_input_icon {
   right: 0px;
   top: 5px;
@@ -7042,7 +7111,7 @@ label.webix_required:after{
   margin-top: -6px;
 }
 .webix_slider_box .webix_slider_handle {
-  background: @mainThemeColor;
+  background: @mainColor;
 }
 
 //-------------------------------------------///
@@ -7050,7 +7119,8 @@ label.webix_required:after{
 //-------------------------------------------///
 
 .webix_accordionitem_label:hover {
-  background: @menuHoverBgColor;
+
+    background: @menuHoverBgColor;
 }
 
 //-------------------------------------------///
@@ -7068,14 +7138,14 @@ label.webix_required:after{
   .webix_link;
 }
 
-.webix_cal_day, 
+.webix_cal_day,
 .webix_cal_week_num {
   line-height: 25px;
   background: none;
 }
 
-.webix_cal_body .webix_selected, 
-.webix_cal_body .webix_cal_select, 
+.webix_cal_body .webix_selected,
+.webix_cal_body .webix_cal_select,
 .webix_cal_body .webix_cal_select.webix_cal_today {
   background: none;
 }
@@ -7084,8 +7154,8 @@ label.webix_required:after{
   display: inline-block;
 }
 
-.webix_cal_body .webix_cal_select span, 
-.webix_cal_body .webix_cal_select.webix_cal_today span, 
+.webix_cal_body .webix_cal_select span,
+.webix_cal_body .webix_cal_select.webix_cal_today span,
 .webix_cal_body .webix_selected {
   color: @buttonActiveFontColor;
   border-radius: 2px;
@@ -7131,9 +7201,11 @@ label.webix_required:after{
 }
 
 // Pager
-.webix_pager_item, 
+.webix_pager_item,
 .webix_pager_item_selected {
   .ordinaryButton;
+	padding: 0;
+
   text-shadow: none;
   border: none;
   background: transparent;
@@ -7210,19 +7282,21 @@ label.webix_required:after{
 
 // Progress
 .webix_progress_icon .webix_progress_state {
-  width: 80px;
-  height: 80px;
-  animation: none;
-  -webkit-animation: none;
-  &:before {
-    content: '';
-    width: 80px;
-    height: 80px;
-    display: block;
-    fill: @mainThemeColor;
-    color: @mainThemeColor;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJsb2FkZXItMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiICAgICB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+ICA8cGF0aCBmaWxsPSIjMzQ5OGRiIiBkPSJNMjUuMjUxLDYuNDYxYy0xMC4zMTgsMC0xOC42ODMsOC4zNjUtMTguNjgzLDE4LjY4M2g0LjA2OGMwLTguMDcxLDYuNTQzLTE0LjYxNSwxNC42MTUtMTQuNjE1VjYuNDYxeiI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9InhtbCIgICAgICBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iICAgICAgdHlwZT0icm90YXRlIiAgICAgIGZyb209IjAgMjUgMjUiICAgICAgdG89IjM2MCAyNSAyNSIgICAgICBkdXI9IjAuNnMiICAgICAgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4gICAgPC9wYXRoPiAgPC9zdmc+);
-  }
+	width: 80px;
+	height: 80px;
+	animation: none;
+	-webkit-animation: none;
+	margin-left: -40px;
+	margin-top: -40px;
+	&:before {
+		content: '';
+		width: 80px;
+		height: 80px;
+		display: block;
+		fill: @mainColor;
+		color: @mainColor;
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJsb2FkZXItMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiICAgICB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+ICA8cGF0aCBmaWxsPSIjMzQ5OGRiIiBkPSJNMjUuMjUxLDYuNDYxYy0xMC4zMTgsMC0xOC42ODMsOC4zNjUtMTguNjgzLDE4LjY4M2g0LjA2OGMwLTguMDcxLDYuNTQzLTE0LjYxNSwxNC42MTUtMTQuNjE1VjYuNDYxeiI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9InhtbCIgICAgICBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iICAgICAgdHlwZT0icm90YXRlIiAgICAgIGZyb209IjAgMjUgMjUiICAgICAgdG89IjM2MCAyNSAyNSIgICAgICBkdXI9IjAuNnMiICAgICAgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4gICAgPC9wYXRoPiAgPC9zdmc+);
+	}
 }
 
 //for skin autodetection

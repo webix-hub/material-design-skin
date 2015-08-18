@@ -413,7 +413,7 @@ x\:ui {
 }
 .webix_list_item.webix_selected {
   color: #545454;
-  background: #ffffff;
+  background: #f2f2f2;
 }
 .webix_list .webix_list_item.webix_selected {
   border-bottom: 1px solid #edf2f1;
@@ -429,8 +429,7 @@ x\:ui {
 .webix_group_back.webix_selected {
   position: relative;
   background: #ffffff;
-  color: #ffffff;
-  color: #7a7a7a;
+  color: #adadad;
 }
 .webix_arrow_icon {
   position: absolute;
@@ -483,7 +482,7 @@ x\:ui {
 }
 .webix_list-x .webix_list_item.webix_selected {
   border-left: 1px solid #edf2f1;
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid #f2f2f2;
   padding-left: 9px;
 }
 .webix_list-x .webix_scroll_cont {
@@ -526,7 +525,7 @@ x\:ui {
 /*selected  button of pager*/
 .webix_pager_item_selected {
   cursor: default;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
   border: 1px solid #edf2f1;
 }
 .webix_animation .webix_ss_header {
@@ -560,7 +559,7 @@ x\:ui {
 /*default item in selected state*/
 .webix_dataview_item.webix_selected {
   color: #545454;
-  background: #ffffff;
+  background: #f2f2f2;
   border-bottom: 1px solid #edf2f1;
   border-right: 1px solid #edf2f1;
 }
@@ -1103,9 +1102,8 @@ div.webix_modal_cover {
 .webix_ss_header TD,
 .webix_ss_vscroll_header,
 .webix_dd_drag_column {
-  color: #7a7a7a;
+  color: #adadad;
   background: #ffffff;
-  color: #ffffff;
 }
 .webix_ss_footer TD,
 .webix_ss_vscroll_footer {
@@ -1158,13 +1156,13 @@ div.webix_modal_cover {
 .webix_column > div.webix_column_select,
 .webix_column > div.webix_row_select {
   color: #545454;
-  background: #ffffff;
+  background: #f2f2f2;
 }
 /*extra borders, for selection in cell mode*/
 .webix_column > div.webix_cell_select {
   border-bottom: 1px solid #edf2f1;
   border-left: 1px solid #edf2f1;
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid #f2f2f2;
   padding-top: 0px;
   padding-left: 19px;
 }
@@ -1179,7 +1177,7 @@ div.webix_modal_cover {
 /*extra borders for selection in column mode*/
 .webix_column > div.webix_column_select {
   border-left: 1px solid #edf2f1;
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid #f2f2f2;
   padding-left: 19px;
 }
 /*header selection in column mode*/
@@ -1276,7 +1274,7 @@ div.webix_modal_cover {
 }
 .webix_dtable_span.webix_selected {
   color: #545454;
-  background: #ffffff;
+  background: #f2f2f2;
 }
 .webix_hcell span.webix_input_icon {
   background-color: transparent;
@@ -1380,7 +1378,7 @@ div.webix_modal_cover {
   padding: 4px 10px 4px 4px;
   margin-left: -4px;
   color: #545454;
-  background: #ffffff;
+  background: #f2f2f2;
 }
 .webix_tree_checkbox {
   margin: 1px 0 0;
@@ -1563,7 +1561,7 @@ div.webix_modal_cover {
 .webix_cal_body .webix_cal_select,
 .webix_cal_body .webix_cal_select.webix_cal_today {
   color: #545454;
-  background: #ffffff;
+  background: #f2f2f2;
 }
 .webix_cal_day,
 .webix_cal_week_num {
@@ -1613,7 +1611,7 @@ div.webix_modal_cover {
   cursor: pointer;
 }
 .webix_selected {
-  background: #ffffff;
+  background: #f2f2f2;
   color: #545454;
 }
 .webix_cal_footer {
@@ -1642,7 +1640,7 @@ div.webix_modal_cover {
 .webix_cal_time:hover,
 .webix_cal_month_name:hover {
   text-decoration: underline;
-  color: #ffffff;
+  color: #3498db;
 }
 .webix_cal_month_name.webix_readonly:hover {
   text-decoration: none;
@@ -2262,7 +2260,7 @@ body:not(:-moz-handler-blocked) .webix_el_select select {
 .webix_segment_1.webix_selected,
 .webix_segment_N.webix_selected {
   color: #545454;
-  background: #ffffff;
+  background: #f2f2f2;
 }
 .webix_inp_static {
   border: 1px solid #edf2f1;
@@ -2531,7 +2529,7 @@ label.webix_required:after {
 .webixtype_bottom .webix_item_tab.webix_selected {
   border-bottom-width: 1px ;
   color: #545454;
-  background: #ffffff;
+  background: #f2f2f2;
 }
 .webix_before_all_tabs {
   width: 100%;
@@ -2773,7 +2771,7 @@ label.webix_required:after {
   height: 10px;
   float: left;
   width: 100px;
-  background: #ffffff;
+  background: #f7fbfe;
   border: 1px solid #fcfdfd;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -2886,7 +2884,7 @@ label.webix_required:after {
 .webix_progress_bottom .webix_progress_state {
   width: 0px;
   height: 6px;
-  background: #ffffff;
+  background: #f2f2f2;
   -moz-transition: width 3s;
   transition: width 3s;
 }
@@ -2928,8 +2926,8 @@ label.webix_required:after {
   box-sizing: border-box;
 }
 .webix_organogram_item.webix_selected {
-  background-color: #ffffff;
-  border-color: #ffffff;
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
 }
 .webix_organogram_list {
   border-radius: 4px;
@@ -5411,10 +5409,10 @@ label.webix_required:after {
 }
 .webix_list_item.webix_group_back {
   background: #ffffff;
-  color: #ffffff;
+  color: #adadad;
 }
 .webix_list_item.webix_group_back .webix_arrow_icon {
-  color: #ffffff;
+  color: #adadad;
 }
 .webix_view.webix_list {
   border: none;
@@ -5430,6 +5428,10 @@ label.webix_required:after {
   background-color: #f2f2f2;
   padding: 0px 16px;
   border: none;
+}
+.webix_list .webix_list_item.webix_selected {
+  color: #545454;
+  background-color: #f2f2f2;
 }
 .webix_list .webix_list_item.webix_selected {
   background-color: #e6e6e6;
@@ -5462,7 +5464,10 @@ label.webix_required:after {
   background: transparent;
 }
 .webix_menu.webix_view .webix_list_item:hover,
-.webix_menu.webix_view .webix_list_item:active,
+.webix_menu.webix_view .webix_list_item:active {
+  background-color: #f2f2f2;
+  text-decoration: none;
+}
 .webix_menu.webix_view .webix_list_item.webix_selected {
   color: #545454;
   background-color: #f2f2f2;
@@ -5488,6 +5493,7 @@ label.webix_required:after {
   font-weight: bold;
 }
 .webix_dtable_span.webix_selected {
+  color: #545454;
   background: #f2f2f2;
 }
 .webix_control {
@@ -6767,12 +6773,12 @@ label.webix_required:after {
 .webix_view .webix_layout_form input:focus,
 .webix_view .webix_layout_form .webix_inp_static:focus,
 .webix_view .webix_layout_form select:focus {
-  border-color: #3498db;
+  border-bottom-color: #3498db;
 }
 .webix_view .webix_layout_form input.error,
 .webix_view .webix_layout_form .webix_inp_static.error,
 .webix_view .webix_layout_form select.error {
-  border-color: #ff5252;
+  border-bottom-color: #ff5252;
 }
 .webix_view .webix_layout_form textarea {
   border: 1px solid #cfddda;
@@ -6806,31 +6812,82 @@ label.webix_required:after {
   font-size: 14px;
   font-weight: bold;
 }
+/*
 .webix_radio_option .webix_inp_radio_border input {
   display: none;
 }
+
 .webix_radio_option .webix_inp_radio_border:after {
   display: inline-block;
   content: "";
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgCAMAAAAsVwj+AAAAUVBMVEUAAABfmMCXl5c0mNs0mNs0mNtomLo0mNuXl5c0mNs0mNs0mNuXl5eXl5c0mNuXl5eXl5eXl5eXl5c0mNs0mNuXl5eXl5c0mNs0mNs0mNuXl5cHNlI6AAAAGXRSTlMABvkt+Y4Kko/u/dfXlTc3LyuRluTkvL274LIPTQAAAMNJREFUKM9lkOkSgzAIhJHcnjUeLbz/g5ZoqmPZH5nJBpaPQNEce8Q+znCqGbhq8Md9Z8yT91NG3hsxBt5ecOi18SD9jHKvDvIMkTNcyhyh5+k2Ju4BubmNhvFpeEbVokLVWAV2oseCHiu6Wk6tLzKus7Zz5ocXWjrULud/fMiG0fsxWHqX0IVWUztXCnK21lxZtjXgKJSYlIKUB3LQ0QjiihzASB1YkpdUjCSVZJ+Gp6RaVKga+we2VHRX0F1BV8vp9b9diBB+8yawHwAAAABJRU5ErkJggg==);
+  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgCAMAAAAsVwj+AAAAUVBMVEUAAABfmMCXl5c0mNs0mNs0mNtomLo0mNuXl5c0mNs0mNs0mNuXl5eXl5c0mNuXl5eXl5eXl5eXl5c0mNs0mNuXl5eXl5c0mNs0mNs0mNuXl5cHNlI6AAAAGXRSTlMABvkt+Y4Kko/u/dfXlTc3LyuRluTkvL274LIPTQAAAMNJREFUKM9lkOkSgzAIhJHcnjUeLbz/g5ZoqmPZH5nJBpaPQNEce8Q+znCqGbhq8Md9Z8yT91NG3hsxBt5ecOi18SD9jHKvDvIMkTNcyhyh5+k2Ju4BubmNhvFpeEbVokLVWAV2oseCHiu6Wk6tLzKus7Zz5ocXWjrULud/fMiG0fsxWHqX0IVWUztXCnK21lxZtjXgKJSYlIKUB3LQ0QjiihzASB1YkpdUjCSVZJ+Gp6RaVKga+we2VHRX0F1BV8vp9b9diBB+8yawHwAAAABJRU5ErkJggg==);
   width: 16px;
   height: 16px;
 }
 .webix_radio_1:after {
   background-position: 0 16px;
+}*/
+.webix_el_radio .webix_custom_radio:before {
+  content: " ";
+  background-color: #ffffff;
+}
+.webix_el_radio .webix_radio_1 .webix_custom_radio:before {
+  content: " ";
+  margin: 3px;
+  border-radius: 50%;
+  display: block;
+  width: 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 6px;
+  background-color: #3498db;
+}
+.webix_el_radio .webix_radio_1 .webix_custom_radio {
+  border: 2px solid #3498db;
+  box-shadow: none;
+  height: 12px;
+  width: 12px;
+}
+.webix_el_radio .webix_custom_radio {
+  display: block;
+  height: 12px;
+  width: 12px;
+  border: 2px solid #878787;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.webix_el_radio .webix_label_right {
+  color: #545454;
+  font-size: 14px;
 }
 .webix_el_checkbox .webix_inp_checkbox_border input {
   display: none;
 }
-.webix_el_checkbox .webix_inp_checkbox_border .webix_custom_checkbox {
-  display: inline-block;
-  content: "";
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgCAMAAAAsVwj+AAAASFBMVEUAAAAAAAAAmd4AAAAAAAAAmd4Amd4AAAAAmd4Amd4Amd4Amd4Amd4AAAAAAAAAmd4AAAAAmd4Amd4Amd4Amd4Amd4Amd4Amd4NjlYkAAAAF3RSTlMAjfJuZvfmf1IPt6DviGtkNpS7QhfPBNfjaCMAAACBSURBVCjPzY9REoMgDESXUIhaUFFb7n/TZuo4XcoFfH/7IJDFqo7QFZo9kRVuBjE7OM/C31n8r675QWTt6y9RiLgg1oYIaYU0opQQWDwxSoVwnr4jks78HrdaE0LY93Sd26MmBgxy5XPETLH8+9bu4NhoDzPH1C6WXpUFI125rv4H68oRP1WPvyYAAAAASUVORK5CYII=);
-  width: 16px;
-  height: 16px;
+.webix_custom_checkbox {
+  float: left;
+  position: relative;
+  top: 50%;
+  width: auto;
+  margin-top: -7px;
+  height: 12px;
+  width: 12px;
+  border-radius: 2px;
+  border: 2px solid #878787;
 }
 .webix_checkbox_1 .webix_custom_checkbox {
-  background-position: 0 16px;
+  border-color: #3498db;
+  background-color: #3498db;
+}
+.webix_checkbox_1 .webix_custom_checkbox:before {
+  content: "\f00c";
+  color: #ffffff;
+  font-family: FontAwesome;
+  font-size: 12px;
+  height: 12px;
+  display: block;
+  line-height: 12px;
+  width: 12px;
 }
 .webix_inp_label {
   font-size: 14px;
@@ -7046,6 +7103,7 @@ label.webix_required:after {
   background-color: transparent;
   padding: 0px 12px;
   box-shadow: none;
+  padding: 0;
   text-shadow: none;
   border: none;
   background: transparent;
@@ -7149,6 +7207,8 @@ label.webix_required:after {
   height: 80px;
   animation: none;
   -webkit-animation: none;
+  margin-left: -40px;
+  margin-top: -40px;
 }
 .webix_progress_icon .webix_progress_state:before {
   content: '';
