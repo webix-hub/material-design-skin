@@ -1,6 +1,6 @@
 /*
 @license
-webix UI v.3.0.0
+webix UI v.3.0.8
 This software is covered by Webix Commercial License.
 Usage without proper license is prohibited.
 (c) XB Software Ltd.
@@ -35,6 +35,7 @@ x\:ui{display:none}
 .webix_resize_handle_y{cursor:n-resize;height:1px;width:100%;position:absolute;z-index:2;left:0}
 .webix_resize_handle_y .webix_handle_content{border-width:1px 0}
 .webix_resize_origin_y{cursor:n-resize;height:3px;width:100%;position:absolute;z-index:2;left:0}
+.webix_resizer.webix_disabled_view{cursor:default}
 .webix_resizer_vy{cursor:n-resize;margin-top:0!important;border:0!important;padding:0!important;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAADAQMAAABCowZuAAAABlBMVEUAAACkvtSA7tmIAAAAAXRSTlMAQObYZgAAAA9JREFUCB1jXMUABoxAGgAJaAFXPIkJqAAAAABJRU5ErkJggg==) center center no-repeat}
 .webix_resizer_vx{cursor:e-resize;margin-left:0!important;border:0!important;padding:0!important;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAXAQMAAAD0oWdxAAAABlBMVEUAAACkvtSA7tmIAAAAAXRSTlMAQObYZgAAAA5JREFUeF5jWMDAQDwGAKyuB4FpGQdzAAAAAElFTkSuQmCC) center center no-repeat}
 .webix_resizer_y{cursor:n-resize;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAADAQMAAABCowZuAAAABlBMVEUAAACkvtSA7tmIAAAAAXRSTlMAQObYZgAAAA9JREFUCB1jXMUABoxAGgAJaAFXPIkJqAAAAABJRU5ErkJggg==) center center no-repeat #fff}
@@ -377,7 +378,8 @@ body:not(:-moz-handler-blocked) .webix_el_select select{padding:.2em}
 .webix_el_colorpicker .webix_input_icon,.webix_el_combo .webix_input_icon,.webix_el_datepicker .webix_input_icon,.webix_el_richselect .webix_input_icon,.webix_el_search .webix_input_icon{background:0 0;z-index:1;position:absolute}
 .webix_el_combo .webix_input_icon,.webix_el_richselect .webix_input_icon{padding-left:7px;width:19px}
 .webix_el_colorpicker .webix_input_icon,.webix_el_datepicker .webix_input_icon,.webix_el_search .webix_input_icon{padding-left:5px;width:21px}
-.webix_el_radio .webix_inp_label{line-height:normal!important;padding-top:5.5px}
+.webix_view button::-moz-focus-inner{padding:0;border:0}
+.webix_el_radio .webix_inp_label{line-height:normal!important;padding-top:3.5px}
 .webix_el_checkbox input,.webix_inp_radio_border input{margin:0;padding:0;float:left}
 .webix_line_break{clear:both}
 .webix_custom_checkbox,.webix_custom_radio{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}
@@ -400,7 +402,8 @@ label.webix_required:after{padding-left:4px;content:"*";color:red}
 .webix_el_text .webix_multicombo_input{background-color:transparent;border:0;float:left;vertical-align:middle;padding:0;color:#545454;font-size:15px;font-family:Roboto;margin-left:7px}
 .webix_el_text .webix_multicombo_input:focus{border:0;box-shadow:none}
 .webix_multicombo_listbox{width:auto;line-height:1;margin:0;padding:0;list-style:none}
-.webix_multicombo_value{padding:0 5px 0 7px;background-color:#f2f2f2;display:inline-block;margin:3px;float:left;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px}
+.webix_multicombo_tag,.webix_multicombo_value{padding:0 5px 0 7px;background-color:#f2f2f2;display:inline-block;margin:3px;float:left;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px}
+.webix_multicombo_tag{min-width:15px;text-align:center;padding:0 5px}
 .webix_multicombo_delete{margin-left:10px;padding:0 5px;color:#2e2e2e;cursor:pointer}
 .webix_multilist .webix_selected{background:#f2f2f2;color:#545454}
 .webix_all_tabs{height:100%;display:table}
@@ -1315,12 +1318,12 @@ label.webix_required:after{padding-left:4px;content:"*";color:red}
 :-ms-input-placeholder{color:#b8b8b8;font-size:14px}
 .webix_form .webix_el_label,.webix_form label{color:#545454;font-family:Roboto;font-size:14px;font-weight:700}
 .webix_el_radio .webix_custom_radio:before{content:" ";background-color:#fff}
-.webix_el_radio .webix_radio_1 .webix_custom_radio:before{content:" ";margin:3px;border-radius:50%;display:block;width:6px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:6px;background-color:#3498db}
-.webix_el_radio .webix_radio_1 .webix_custom_radio{border:2px solid #3498db;box-shadow:none;height:12px;width:12px}
-.webix_el_radio .webix_custom_radio{display:block;height:12px;width:12px;border:2px solid #878787;border-radius:50%;background-color:#fff}
+.webix_el_radio .webix_radio_1 .webix_custom_radio:before{content:" ";border-radius:50%;display:block;width:6px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:6px;background-color:#3498db}
+.webix_el_radio .webix_radio_1 .webix_custom_radio{border:2px solid #3498db;box-shadow:none;height:16px;width:16px}
+.webix_el_radio .webix_custom_radio{display:block;padding:3px;height:16px;width:16px;border:2px solid #878787;border-radius:50%;background-color:#fff}
 .webix_el_radio .webix_label_right{color:#545454;font-size:14px}
 .webix_el_checkbox .webix_inp_checkbox_border input{display:none}
-.webix_custom_checkbox{float:left;position:relative;top:50%;margin-top:-7px;height:12px;width:12px;border-radius:2px;border:2px solid #878787}
+.webix_custom_checkbox{float:left;position:relative;top:50%;margin-top:-7px;padding:0;height:16px;width:16px;border-radius:2px;background-color:#fff;border:2px solid #878787}
 .webix_checkbox_1 .webix_custom_checkbox{border-color:#3498db;background-color:#3498db}
 .webix_checkbox_1 .webix_custom_checkbox:before{content:"\f00c";color:#fff;font-family:FontAwesome;font-size:12px;height:12px;display:block;line-height:12px;width:12px}
 .webix_inp_label{font-size:14px}

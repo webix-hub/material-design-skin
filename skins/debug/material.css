@@ -199,6 +199,9 @@ x\:ui {
   z-index: 2;
   left: 0px;
 }
+.webix_resizer.webix_disabled_view {
+  cursor: default;
+}
 .webix_resizer_vy {
   cursor: n-resize;
   margin-top: 0px !important;
@@ -2412,9 +2415,14 @@ body:not(:-moz-handler-blocked) .webix_el_select select {
   padding-left: 5px;
   width: 21px;
 }
+/*Remove button padding in FF*/
+.webix_view button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
 .webix_el_radio .webix_inp_label {
   line-height: normal !important;
-  padding-top: 5.5px;
+  padding-top: 3.5px;
 }
 .webix_inp_radio_border input,
 .webix_el_checkbox input {
@@ -2540,7 +2548,8 @@ label.webix_required:after {
   padding: 0;
   list-style: none;
 }
-.webix_multicombo_value {
+.webix_multicombo_value,
+.webix_multicombo_tag {
   padding: 0 5px 0 7px;
   background-color: #f2f2f2;
   display: inline-block;
@@ -2549,6 +2558,11 @@ label.webix_required:after {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+}
+.webix_multicombo_tag {
+  min-width: 15px;
+  text-align: center;
+  padding: 0 5px 0 5px;
 }
 .webix_multicombo_delete {
   margin-left: 10px;
@@ -6982,7 +6996,6 @@ label.webix_required:after {
 }
 .webix_el_radio .webix_radio_1 .webix_custom_radio:before {
   content: " ";
-  margin: 3px;
   border-radius: 50%;
   display: block;
   width: 6px;
@@ -6995,13 +7008,14 @@ label.webix_required:after {
 .webix_el_radio .webix_radio_1 .webix_custom_radio {
   border: 2px solid #3498db;
   box-shadow: none;
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 16px;
 }
 .webix_el_radio .webix_custom_radio {
   display: block;
-  height: 12px;
-  width: 12px;
+  padding: 3px;
+  height: 16px;
+  width: 16px;
   border: 2px solid #878787;
   border-radius: 50%;
   background-color: #ffffff;
@@ -7019,9 +7033,11 @@ label.webix_required:after {
   top: 50%;
   width: auto;
   margin-top: -7px;
-  height: 12px;
-  width: 12px;
+  padding: 0;
+  height: 16px;
+  width: 16px;
   border-radius: 2px;
+  background-color: #ffffff;
   border: 2px solid #878787;
 }
 .webix_checkbox_1 .webix_custom_checkbox {

@@ -556,6 +556,10 @@ x\:ui{
 	left:0px;
 }
 
+.webix_resizer.webix_disabled_view{
+	cursor: default;
+}
+
 .webix_resizer_vy{
 	cursor: n-resize;
 	margin-top:0px !important;
@@ -2920,11 +2924,16 @@ body:not(:-moz-handler-blocked) .webix_el_select select{
 	}
 }
 
+/*Remove button padding in FF*/
+.webix_view button::-moz-focus-inner{
+	padding:0;
+	border: 0;
+}
 // checkbox
 //radio
 .webix_el_radio .webix_inp_label{
 	line-height: normal !important;
-	padding-top: ( @inputHeight - @formFontSize - 4 )/2;
+	padding-top: ( @inputHeight - @formFontSize - 4 )/2 - @skin_input_y_padding;
 }
 
 
@@ -3050,7 +3059,7 @@ label.webix_required:after{
 	padding:0;
 	list-style: none;
 }
-.webix_multicombo_value{
+.webix_multicombo_value, .webix_multicombo_tag{
 
 	padding: 0 5px 0 7px;
 	background-color: darken(@backColor,5%);
@@ -3059,13 +3068,18 @@ label.webix_required:after{
 	float: left;
 	#border > .radius(@skin_input_radius);
 }
-
+.webix_multicombo_tag{
+	min-width: 15px;
+	text-align: center;
+	padding: 0 5px 0 5px;
+}
 .webix_multicombo_delete{
 	margin-left: 10px;
 	padding: 0 5px ;
 	color: darken(@fontColor,15%);
 	cursor: pointer;
 }
+
 .webix_multilist .webix_selected{
 	background: darken(@backColor,5%);
 	color: @fontColor;
@@ -7062,7 +7076,7 @@ label.webix_required:after{
   background-position: 0 16px;
 }*/
 @checkBoxColor: lighten(@labelFontColor,20%);
-@radioSize: 12px;
+@radioSize: 16px;
 .webix_el_radio{
 	.webix_custom_radio:before{
 		content: " ";
@@ -7070,7 +7084,6 @@ label.webix_required:after{
 	}
 	.webix_radio_1 .webix_custom_radio:before{
 		content: " ";
-		margin: (@radioSize - 6)/2;
 		border-radius: 50%;
 		display: block;
 		width: 6px;
@@ -7080,12 +7093,14 @@ label.webix_required:after{
 	}
 	.webix_radio_1 .webix_custom_radio{
 		border:2px solid @mainColor;
+
 		box-shadow:none;
 		height: @radioSize;
 		width: @radioSize;
 	}
 	.webix_custom_radio{
 		display: block;
+		padding: (@radioSize - 10)/2;
 		height: @radioSize;
 		width: @radioSize;
 		border:2px solid @checkBoxColor;
@@ -7112,9 +7127,11 @@ label.webix_required:after{
 	top: 50%;
 	width: auto;
 	margin-top: -7px;
-	height: 12px;
-	width: 12px;
+	padding: 0;
+	height: 16px;
+	width: 16px;
 	border-radius: 2px;
+	background-color: @backColor;
 	border:2px solid @checkBoxColor;
 }
 
