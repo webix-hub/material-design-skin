@@ -1,6 +1,6 @@
 /*
 @license
-webix UI v.3.1.0
+webix UI v.3.1.2
 This software is covered by Webix Commercial License.
 Usage without proper license is prohibited.
 (c) XB Software Ltd.
@@ -1237,7 +1237,7 @@ label.webix_required:after{padding-left:4px;content:"*";color:red}
 .webix_dd_drag_column,.webix_ss_header,.webix_ss_header TD,.webix_ss_vscroll_header{font-weight:700;color:#adadad}
 .webix_ss_footer td{border-top:1px solid #edf2f1}
 .webix_el_arrow{background:#fff;font-weight:700;color:#444}
-.webixbutton{background:0 0;padding:0}
+.webixbutton{background:0 0;padding:8px 38px;text-transform:uppercase}
 .webix_el_button button,.webix_el_button input,.webix_el_toggle button,.webix_el_toggle input,.webixbutton button,.webixbutton input{border-width:0;border-radius:2px;font-family:Roboto;font-size:14px;font-weight:700;text-transform:uppercase;text-shadow:none;color:#3498db;background-color:transparent;padding:0 12px;box-shadow:none}
 .webix_el_button button:active,.webix_el_button button:hover,.webix_el_button input:active,.webix_el_button input:hover,.webix_el_toggle button:active,.webix_el_toggle button:hover,.webix_el_toggle input:active,.webix_el_toggle input:hover,.webixbutton button:active,.webixbutton button:hover,.webixbutton input:active,.webixbutton input:hover{color:#3498db;background-color:rgba(52,152,219,.2)}
 .webix_el_button button:active .webix_icon_btn,.webix_el_button button:hover .webix_icon_btn,.webix_el_button input:active .webix_icon_btn,.webix_el_button input:hover .webix_icon_btn,.webix_el_toggle button:active .webix_icon_btn,.webix_el_toggle button:hover .webix_icon_btn,.webix_el_toggle input:active .webix_icon_btn,.webix_el_toggle input:hover .webix_icon_btn,.webixbutton button:active .webix_icon_btn,.webixbutton button:hover .webix_icon_btn,.webixbutton input:active .webix_icon_btn,.webixbutton input:hover .webix_icon_btn{color:#3498db}

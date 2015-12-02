@@ -5897,7 +5897,8 @@ label.webix_required:after {
 }
 .webixbutton {
   background: transparent;
-  padding: 0;
+  padding: 8px 38px;
+  text-transform: uppercase;
 }
 .webix_el_button input,
 .webix_el_toggle input,
