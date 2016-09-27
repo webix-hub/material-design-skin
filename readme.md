@@ -1,6 +1,9 @@
 Material Design skin for Webix UI
 =================================
 
+[![Join the chat at https://gitter.im/webix-hub/webix](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/webix-hub/webix) 
+
+
 Live demo - http://webix.com/demos/material/admin-app/index.html#!/app/forms
 
 Skin will work with Webix 2.3+
