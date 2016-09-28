@@ -6713,10 +6713,14 @@ label.webix_required:after{
 }
 
 .webix_ss_header{
-    border-bottom: 1px solid @tableHeaderFontColor;
+    //border-bottom: 1px solid @tableHeaderFontColor;
     text-transform:uppercase;
     font-size: @fontSize * 0.93;
 };
+.webix_ss_header tr:last-child td,
+.webix_ss_header tr td[rowspan]{
+  border-bottom: 1px solid @tableHeaderFontColor;
+}
 .webix_ss_header,
 .webix_ss_header TD,
 .webix_ss_vscroll_header,
@@ -6724,6 +6728,7 @@ label.webix_required:after{
   font-weight: bold;
   color: @tableHeaderFontColor;
 }
+
 .webix_ss_footer td{
     border-top:1px solid @tabbarBorderColor;
 };
@@ -7744,6 +7749,27 @@ label.webix_required:after{
   background: rgba(255, 255, 255, 0.5);
 }
 
+//Daterange
+.webix_cal_range_start, .webix_cal_range_end,
+.webix_cal_event.webix_cal_range_start, .webix_cal_event.webix_cal_range_end,
+.webix_cal_body .webix_cal_today.webix_cal_range_start{
+  background-color:@buttonActiveBgColor;
+  color:@buttonActiveFontColor;
+  span{
+    border:none !important;
+  }
+  
+}
+.webix_cal_range{
+  background-color:lighten(@buttonActiveBgColor, 42%);
+}
+.webix_daterange .webix_range_timepicker .webix_cal_time{
+  padding:5px 15px;
+}
+.webix_daterange .webix_cal_icons{
+  padding:0px;
+}
+
 // Progress
 .webix_progress_icon .webix_progress_state {
 	width: 80px;
@@ -7761,6 +7787,10 @@ label.webix_required:after{
 		color: @mainColor;
 		background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJsb2FkZXItMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiICAgICB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+ICA8cGF0aCBmaWxsPSIjMzQ5OGRiIiBkPSJNMjUuMjUxLDYuNDYxYy0xMC4zMTgsMC0xOC42ODMsOC4zNjUtMTguNjgzLDE4LjY4M2g0LjA2OGMwLTguMDcxLDYuNTQzLTE0LjYxNSwxNC42MTUtMTQuNjE1VjYuNDYxeiI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9InhtbCIgICAgICBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iICAgICAgdHlwZT0icm90YXRlIiAgICAgIGZyb209IjAgMjUgMjUiICAgICAgdG89IjM2MCAyNSAyNSIgICAgICBkdXI9IjAuNnMiICAgICAgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4gICAgPC9wYXRoPiAgPC9zdmc+);
 	}
+}
+.webix_progress_bottom .webix_progress_state, .webix_progress_top .webix_progress_state {
+  background: #27AE60;
+
 }
 
 //for skin autodetection

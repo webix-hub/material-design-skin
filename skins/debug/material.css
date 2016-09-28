@@ -6073,9 +6073,12 @@ label.webix_required:after {
   padding: 8px 5px 2px 5px;
 }
 .webix_ss_header {
-  border-bottom: 1px solid #adadad;
   text-transform: uppercase;
   font-size: 13.02px;
+}
+.webix_ss_header tr:last-child td,
+.webix_ss_header tr td[rowspan] {
+  border-bottom: 1px solid #adadad;
 }
 .webix_ss_header,
 .webix_ss_header TD,
@@ -7695,6 +7698,30 @@ label.webix_required:after {
 .webix_progress_icon {
   background: rgba(255, 255, 255, 0.5);
 }
+.webix_cal_range_start,
+.webix_cal_range_end,
+.webix_cal_event.webix_cal_range_start,
+.webix_cal_event.webix_cal_range_end,
+.webix_cal_body .webix_cal_today.webix_cal_range_start {
+  background-color: #3498db;
+  color: #ffffff;
+}
+.webix_cal_range_start span,
+.webix_cal_range_end span,
+.webix_cal_event.webix_cal_range_start span,
+.webix_cal_event.webix_cal_range_end span,
+.webix_cal_body .webix_cal_today.webix_cal_range_start span {
+  border: none !important;
+}
+.webix_cal_range {
+  background-color: #eaf4fb;
+}
+.webix_daterange .webix_range_timepicker .webix_cal_time {
+  padding: 5px 15px;
+}
+.webix_daterange .webix_cal_icons {
+  padding: 0px;
+}
 .webix_progress_icon .webix_progress_state {
   width: 80px;
   height: 80px;
@@ -7711,6 +7738,10 @@ label.webix_required:after {
   fill: #3498db;
   color: #3498db;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJsb2FkZXItMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiICAgICB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+ICA8cGF0aCBmaWxsPSIjMzQ5OGRiIiBkPSJNMjUuMjUxLDYuNDYxYy0xMC4zMTgsMC0xOC42ODMsOC4zNjUtMTguNjgzLDE4LjY4M2g0LjA2OGMwLTguMDcxLDYuNTQzLTE0LjYxNSwxNC42MTUtMTQuNjE1VjYuNDYxeiI+ICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZVR5cGU9InhtbCIgICAgICBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iICAgICAgdHlwZT0icm90YXRlIiAgICAgIGZyb209IjAgMjUgMjUiICAgICAgdG89IjM2MCAyNSAyNSIgICAgICBkdXI9IjAuNnMiICAgICAgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4gICAgPC9wYXRoPiAgPC9zdmc+);
+}
+.webix_progress_bottom .webix_progress_state,
+.webix_progress_top .webix_progress_state {
+  background: #27AE60;
 }
 .webix_skin_mark {
   height: 220px;
