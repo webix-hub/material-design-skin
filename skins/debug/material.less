@@ -358,7 +358,7 @@
 body{
 	-webkit-tap-highlight-color: transparent !important;
 }
-textarea, input, select, button, .webix_inp_static{ outline:none;}
+
 /*
 	webix_layout_{type}
 	known types are: line, clean, wide, space;
@@ -500,13 +500,26 @@ x\:ui{
 	flex-direction: row;
 	overflow: hidden;
 	box-sizing: border-box;
-
 }
 .webix_flexlayout > div{
 	display: block !important;
 }
 .webix_view_align{
 	background: transparent;
+}
+
+/*Focusing*/
+
+.webix_view div:focus, .webix_view span:focus, .webix_view a.webix_list_item:focus, .webix_view.webix_window:focus{
+	outline-color:lighten(@fontColor, 35%);
+	outline-style:dotted;
+	outline-width:1px;
+}
+textarea, input, select, button, .webix_view div.webix_inp_static:focus{
+	outline:none;
+}
+.webix_view div:active, .webix_view span:active, .webix_view a.webix_list_item:active{
+	outline:none;
 }
 .resizerHandle(){
 	background: rgba(100,100,100,0.1);
@@ -1398,6 +1411,7 @@ x\:ui{
 
 	border-radius: @windowRadius;
 	border: 1px solid #ffffff;
+	outline:none;
 }
 
 .webix_popup_title{
@@ -2600,16 +2614,18 @@ div.webix_modal_cover {
 .webix_cal_range_end{
 	border-radius:0 3px 3px 0;
 }
-.webix_cal_range_start, .webix_cal_range_end, .webix_cal_event.webix_cal_range_start, .webix_cal_event.webix_cal_range_end{
+.webix_cal_range_start, .webix_cal_range_end, 
+.webix_cal_event.webix_cal_range_start, .webix_cal_event.webix_cal_range_end,
+.webix_cal_body .webix_cal_today.webix_cal_range_start, .webix_cal_body .webix_cal_today.webix_cal_range_end
+{
 	background-color:@selectColor;
 	color:@selectFontColor;
 }
-.webix_cal_body .webix_cal_today.webix_cal_range_start{
-	background-color:@selectColor;
-}
-.webix_cal_outside.webix_cal_range, .webix_cal_body .webix_cal_outside.webix_cal_range_start, .webix_cal_body .webix_cal_outside.webix_cal_range_end{
+.webix_cal_outside.webix_cal_range, 
+.webix_cal_body .webix_cal_outside.webix_cal_range_start, .webix_cal_body .webix_cal_outside.webix_cal_range_end,
+.webix_cal_body .webix_cal_outside.webix_cal_today.webix_cal_range_start, .webix_cal_body .webix_cal_outside.webix_cal_today.webix_cal_range_end{
 	background-color:transparent;
-	color:@fontColor;
+	color:lighten(@fontColor, 40%);
 }
 .webix_daterange .webix_cal_icons{
 	text-align:right;
@@ -7752,13 +7768,12 @@ label.webix_required:after{
 //Daterange
 .webix_cal_range_start, .webix_cal_range_end,
 .webix_cal_event.webix_cal_range_start, .webix_cal_event.webix_cal_range_end,
-.webix_cal_body .webix_cal_today.webix_cal_range_start{
+.webix_cal_body .webix_cal_today.webix_cal_range_start, .webix_cal_body .webix_cal_today.webix_cal_range_end{
   background-color:@buttonActiveBgColor;
   color:@buttonActiveFontColor;
   span{
     border:none !important;
   }
-  
 }
 .webix_cal_range{
   background-color:lighten(@buttonActiveBgColor, 42%);
