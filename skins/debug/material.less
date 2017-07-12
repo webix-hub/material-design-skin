@@ -1670,6 +1670,7 @@ div.webix_modal_cover {
 }
 .webix_richfilter{
 	margin-top:1px;
+	line-height: @inputHeight - @skin_input_y_padding*2;
 }
 .webix_ss_filter select{
 	padding:3px;
@@ -2543,7 +2544,6 @@ div.webix_modal_cover {
 /*style used by tooltip's container*/
 .webix_tooltip{
 	display:none;
-	white-space: pre;
 	position:absolute;
 	z-index:10000;
 
@@ -3864,8 +3864,8 @@ label.webix_required:after{
  * -------------------------- */
 @font-face {
 	font-family: 'FontAwesome';
-	src: url('../../fonts/fontawesome-webfont.eot?v=4.7.0');
-	src: url('../../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+	src: url('fonts/fontawesome-webfont.eot?v=4.7.0');
+	src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -6537,6 +6537,9 @@ label.webix_required:after{
 	background: #ededed;
 	padding-left: 13px;
 }
+.webix_invalid .webix_list{
+	background: #f8e2e2;
+}
 
 //-------------------------------------------///
 //                  Basis                    ///
@@ -6546,34 +6549,34 @@ label.webix_required:after{
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../../fonts/Roboto-Regular-webfont.eot');
-  src: url('../../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../../fonts/Roboto-Regular-webfont.woff') format('woff'),
-       url('../../fonts/Roboto-Regular-webfont.ttf') format('truetype'),
-       url('../../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+  src: url('fonts/Roboto-Regular-webfont.eot');
+  src: url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Roboto-Regular-webfont.woff') format('woff'),
+       url('fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+       url('fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../../fonts/Roboto-Medium-webfont.eot');
-  src: url('../../fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../../fonts/Roboto-Medium-webfont.woff') format('woff'),
-       url('../../fonts/Roboto-Medium-webfont.ttf') format('truetype'),
-       url('../../fonts/Roboto-Medium-webfont.svg#robotobold') format('svg');
+  src: url('fonts/Roboto-Medium-webfont.eot');
+  src: url('fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Roboto-Medium-webfont.woff') format('woff'),
+       url('fonts/Roboto-Medium-webfont.ttf') format('truetype'),
+       url('fonts/Roboto-Medium-webfont.svg#robotobold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../../fonts/fontawesome-webfont.eot');
-  src: url('../../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), 
-       url('../../fonts/fontawesome-webfont.woff2') format('woff2'), 
-       url('../../fonts/fontawesome-webfont.woff') format('woff'), 
-       url('../../fonts/fontawesome-webfont.ttf') format('truetype'), 
-       url('../../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+  src: url('fonts/fontawesome-webfont.eot');
+  src: url('fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), 
+       url('fonts/fontawesome-webfont.woff2') format('woff2'), 
+       url('fonts/fontawesome-webfont.woff') format('woff'), 
+       url('fonts/fontawesome-webfont.ttf') format('truetype'), 
+       url('fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
   font-weight: bold;
   font-style: normal;
 }
@@ -8568,6 +8571,115 @@ label.webix_required:after{
         fill: rgba(255, 255, 255, 0.3);
     }
 }
+
+/* print css rules*/
+.webix_ui_print {
+  display: none;
+}
+body.webix_print{
+  margin-top:0px;
+}
+
+@media print {
+  body.webix_print{
+    overflow:visible !important;
+    background-color:none !important;
+  }
+  body.webix_print > * {
+    display:none;
+  }
+  body.webix_print * {
+    visibility: hidden;
+  }
+  .webix_ui_print{
+    display: block !important;
+    margin: 0 0 0 0!important;
+    visibility:visible !important;
+    *{
+      visibility:visible !important;
+    }
+  }
+  .webix_print_noscroll{
+  	height:auto !important;
+  	width:auto !important;
+  }
+  .webix_print_noscroll, .webix_print_noscroll .webix_scroll_cont{
+  	overflow:visible !important;
+  }
+  .webix_print_pagebreak{
+    page-break-after:always;
+  }
+  .webix_print_header, .webix_print_footer{
+    display: block !important;
+    margin:20px 0px;
+    text-align:center;
+    height:auto !important;
+    visibility:visible !important;
+    *{
+      visibility:visible !important;
+    }
+  }
+
+  /*datatable specific*/
+  .webix_table_print{
+    display:table;
+    visibility:visible !important;;
+    table-layout:fixed;
+    width:100%;
+    border:1px solid #ebebeb; 
+    margin-bottom:20px;
+    position:initial;
+    td{
+      overflow:hidden;
+    }
+    tr{
+      page-break-inside:avoid;
+    }
+    .webix_cell{
+      display:table-cell !important;
+      border-right:1px solid #ebebeb;
+      border-bottom:1px solid #ebebeb;
+      padding:0px 10px;
+      white-space:nowrap;
+    }
+    .webix_header_cell{
+      display:table-cell;
+      .dataHeaderFont;
+      .dataHeaderBg;
+      .dataHeaderBorders;
+      border-right:1px solid @dataHeaderBorderColor;
+      border-bottom:1px solid @dataHeaderBorderColor;
+    }
+    .webix_footer_cell{
+      display:table-cell;
+      .dataFooterFont;
+      .dataFooterBg;
+      background: darken(@backColor,2%);
+      border-right:1px solid @dataBorderColor;
+      border-top:1px solid @dataBorderColor;
+      border-bottom:1px solid @dataBorderColor;
+    }
+    .webix_cell.webix_dtable_span{
+      position:initial !important; 
+      white-space:normal;
+    }
+    .webix_rotate{
+      transform-origin: center 40% !important;
+      -webkit-transform-origin: center !imoprtant;
+    }
+  }
+  .webix_table_print.borderless, .webix_table_print.borderless .webix_cell{
+    border:none;
+  }
+  /* x-list specific*/
+  .webix_table_print.webix_view.webix_list-x{
+    white-space:normal;
+    .webix_list_item{
+      display:table-cell;
+    }
+  }
+}
+
 
 /*predefined styles for text lables inside a item*/
 .webix_strong{

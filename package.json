@@ -1,0 +1,25 @@
+{
+  "name": "webix-skin-material",
+  "version": "4.4.0",
+  "description": "Material skin for Webix UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webix-hub/material-design-skin.git"
+  },
+  "keywords": [
+    "webix",
+    "material",
+    "design",
+    "skin"
+  ],
+  "author": "Maksim Kozhukh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webix-hub/material-design-skin/issues"
+  },
+  "homepage": "https://github.com/webix-hub/material-design-skin#readme"
+}
