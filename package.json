@@ -1,6 +1,6 @@
 {
   "name": "webix-skin-material",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "description": "Material skin for Webix UI",
   "main": "index.js",
   "scripts": {
