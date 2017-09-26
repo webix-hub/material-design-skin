@@ -510,6 +510,9 @@ x\:ui{
 
 /*Focusing*/
 
+.webix_view div, .webix_view span, .webix_view a.webix_list_item{
+	outline:none;
+}
 .webix_view div:focus, .webix_view span:focus, .webix_view a.webix_list_item:focus, .webix_view.webix_window:focus{
 	outline-color:lighten(@fontColor, 35%);
 	outline-style:dotted;
@@ -518,9 +521,7 @@ x\:ui{
 textarea, input, select, button, .webix_view div.webix_inp_static:focus{
 	outline:none;
 }
-.webix_view div:active, .webix_view span:active, .webix_view a.webix_list_item:active{
-	outline:none;
-}
+
 .resizerHandle(){
 	background: rgba(100,100,100,0.1);
 	border:1px dotted lighten(@foreColor, 52%);
@@ -1344,14 +1345,16 @@ textarea, input, select, button, .webix_view div.webix_inp_static:focus{
 }
 
 .webix_clipbuffer{
-	width:1px;
-	height:1px;
-	left:3px;
-	top:3px;
+	width:2000px;
+	height:1px; padding:0; margin:0; border:0;
+	left:0px;
+	top:0px;
+	white-space: pre-wrap;
 	position:fixed;
-	white-space: nowrap;
 	filter:alpha(opacity=0);
 	opacity:0;
+	pointer-events: none;
+	cursor: default;
 }
 
 .webix_message_area{
@@ -1576,6 +1579,13 @@ div.webix_modal_cover {
 	width:100%;
 	overflow:hidden;
 }
+
+.webix_cell, .webix_hcell{
+	background:inherit;
+	font:inherit;
+	text-align:inherit;
+	color:inherit;
+}
 .webix_ss_body{
 	overflow:hidden;
 	position:relative;
@@ -1704,6 +1714,10 @@ div.webix_modal_cover {
 	border-right:1px solid @dataBorderColor;
 	border-top:1px solid @dataBorderColor;
 }
+.webix_size_row td{
+	border:none;
+}
+
 /*remove rightmost borders*/
 .webix_hs_right td.webix_last, .webix_hs_center td.webix_last{
 	border-right-width:0px;
@@ -1786,11 +1800,10 @@ div.webix_modal_cover {
 	color: @fontColor;
 }
 
-.webix_ss_header th, .webix_ss_header td, .webix_ss_header table{
+.webix_ss_header td, .webix_ss_header table{
 	padding:0px;
 	margin:0px;
 }
-
 
 .webix_cell.webix_invalid{
 	background-color: #ffeeee;
@@ -1843,7 +1856,7 @@ div.webix_modal_cover {
 	.selectLine;
 }
 
-.webix_dtable_colrow, .webix_dtable_subrow, .webix_dtable_subview{
+.webix_cell.webix_dtable_colrow, .webix_cell.webix_dtable_subrow, .webix_cell.webix_dtable_subview{
 	position:absolute;	
 	left:0px;
 	top:0px;
@@ -1876,13 +1889,14 @@ div.webix_modal_cover {
 	line-height: normal;
 }
 
+
 .webix_measure_rotate{
 	line-height: normal;
 	white-space:normal;
 	padding:10px;
 }
 
-.webix_span_layer{
+.webix_span_layer, .webix_span_layer_top{
 	background: transparent;
 	position:absolute;
 	left:0px;
@@ -1891,9 +1905,22 @@ div.webix_modal_cover {
 	width:0px;
 	overflow: visible;
 }
+.webix_span_layer_top{
+	z-index:1;
+	overflow: hidden;
+}
+
+.webix_ss_right{
+	.webix_span_layer,
+	.webix_span_layer_top{
+		border-left: 1px solid @borderColor;
+	}
+}
+
 .webix_dtable_span{
 	position:absolute;
 	background: #fff;
+	text-align:left;
 }
 
 .webix_dtable_span.webix_selected{
@@ -3339,6 +3366,28 @@ label.webix_required:after{
 	background: darken(@backColor,5%);
 	color: @fontColor;
 }
+
+.webix_checksuggest_select_all{
+	border: none;
+	border-bottom: 1px solid #ebebeb;
+	border-color: #ebebeb;
+	margin-bottom: 1px;
+	.webix_label_right {
+		text-transform: capitalize;
+		display: block;
+		padding-top: 2px;
+		padding-bottom: 4px;
+	}
+	input {
+		display: none;
+	}
+	&:hover {
+		.webix_label_right {
+			cursor: pointer;
+			color: @buttonColor;
+		}
+	}
+}
 //height of tab
 @tabHeight: @barHeight;
 
@@ -3621,13 +3670,13 @@ label.webix_required:after{
 }
 .webix_slider_box{
 	position:relative;
-
 	padding:0px 10px;
 	height:100%;
-	padding-top:(@inputHeight - 12)/2;
+	padding-top:(@inputHeight - 8)/2;
 	float:left;
 	#border > .radius(5px);
 	#box > .sizing;
+	margin-top:-11px;
 	.webix_slider_left{
 		height:10px;
 		float:left;
@@ -3650,14 +3699,11 @@ label.webix_required:after{
 	.webix_slider_handle{
 		z-index: 1;
 		position: absolute;
-		width:15px; height:15px;
-		top:(@inputHeight - 20)/2;
+		width:14px;
+		height:14px;
+		top:(@inputHeight - 14)/2;
 		border-radius: 8px;
-
-
 	}
-
-
 	.sliderStyle;
 }
 
@@ -3676,18 +3722,15 @@ label.webix_required:after{
 	.webix_slider_box{
 		.webix_slider_left{
 			border: 1px solid #e1e1e1;
-
 		}
 		.webix_slider_right{
-
 			border: 1px solid #e1e1e1;
-
 		}
 		.webix_slider_handle{
 			width:11px;
 			margin:0 2px;
-			height:20px;
-			top:(@inputHeight - 25)/2;
+			height:14px;
+			top:(@inputHeight - 14)/2;
 			border-radius: 2px;
 			#image > .slider;
 			background-position: 3px center;
@@ -3696,9 +3739,46 @@ label.webix_required:after{
 	}
 }
 
+.webix_slider_vertical{
+	.webix_slider_box{
+		.webix_slider_left, .webix_slider_right{
+			width:10px;
+			float:none;
+		}
+		.webix_slider_left{
+			#border > .corners(0,0,5px,5px);
+		}
+		.webix_slider_right{
+			#border > .corners(5px,5px,0,0);
+		}
+		.webix_slider_handle{
+			left:7px;
+		}
+		
+	}
+	.webix_slider_title{
+		padding-top:1px;
+		text-align:left;
+	}
+}
+
+.webix_slider_vertical.webix_slider_alt{
+	.webix_slider_handle {
+	    height: 11px;
+	    width:14px;
+	    left:5px;
+	    background-position:4px center;
+	}
+}
+
 .webix_slider_title{
-	margin-bottom:-11px;
 	text-align: center;
+}
+.webix_slider_title.webix_slider_move{
+	position:relative;
+	text-align:left;
+	display:inline-block;
+	width: auto;
 }
 .webix_progress_top, .webix_progress_bottom{
 	width: 100%;
@@ -6510,7 +6590,7 @@ label.webix_required:after{
 	height:30px;
 	margin-top: 5px;
 
-	background: lighten(@buttonColor, 43%);
+	background: transparent;
 	border-radius:@skin_input_radius;
  	border:1px solid @borderColor;
 	cursor:pointer;
@@ -8004,22 +8084,6 @@ label.webix_required:after{
     border: none;
 }
 .skinBlueButtonActive{}
-.altSliderStyle(){
-    .webix_slider_handle{
-        border: 1px solid @borderColor;
-        background-color:#fff;
-    }
-}
-.sliderStyle(){
-    .webix_slider_left{
-        background-color:rgba(100,100,100,0.1) !important;
-    }
-    .webix_slider_handle{
-        width: 17px;
-        height: 17px;
-        #common > .blueflatbutton;
-    }
-}
 
 
 // disabled controls
@@ -8304,11 +8368,33 @@ label.webix_required:after{
 @sliderTitleFontSize: @fontSize * 0.86;
 .webix_el_slider .webix_slider_title {
   font-size: @sliderTitleFontSize;
-  margin-bottom: -4px;
-  margin-top: -6px;
 }
 .webix_slider_box .webix_slider_handle {
   background: @mainColor;
+}
+.altSliderStyle(){
+    .webix_slider_handle{
+        border: 1px solid @borderColor;
+        background-color:#fff;
+    }
+}
+.sliderStyle(){
+    margin-top:-10px;
+    .webix_slider_right{
+      border:1px solid @borderColor;
+    }
+    .webix_slider_left{
+        background-color:rgba(100,100,100,0.1) !important;
+    }
+    .webix_slider_handle{
+        width: 16px;
+        height: 16px;
+        #common > .blueflatbutton;
+        top:(@inputHeight - 14)/2;
+    }
+}
+.webix_slider_vertical .webix_slider_box{
+  margin-top:-5px;
 }
 
 //-------------------------------------------///
@@ -8665,7 +8751,7 @@ body.webix_print{
     }
     .webix_rotate{
       transform-origin: center 40% !important;
-      -webkit-transform-origin: center !imoprtant;
+      -webkit-transform-origin: center 40% !important;
     }
   }
   .webix_table_print.borderless, .webix_table_print.borderless .webix_cell{
