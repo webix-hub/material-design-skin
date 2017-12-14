@@ -1021,7 +1021,8 @@ textarea, input, select, button, .webix_view div.webix_inp_static:focus{
 	//float:left;
 	text-align:center;
 	height: 100%;
-	width: 32px;
+	width:auto;
+	min-width:32px;
 
 	border:1px solid @borderColor;
 	margin: 0 @skin_input_x_padding;
@@ -1031,6 +1032,7 @@ textarea, input, select, button, .webix_view div.webix_inp_static:focus{
 	font-family: @fontFamily;
 	font-size: @fontSize;
 }
+
 /*selected  button of pager*/
 .webix_pager_item_selected{	
 	cursor:default;
@@ -1061,6 +1063,10 @@ textarea, input, select, button, .webix_view div.webix_inp_static:focus{
 	.selectLine;
 	border-bottom:1px solid @selectBorderColor;
 	border-right:1px solid @selectBorderColor;
+}
+
+.webix_dataview_item.webix_invalid{
+	background-color: #ffeeee;
 }
 /*chart container*/
 .webix_chart{
@@ -2043,6 +2049,7 @@ div.webix_modal_cover {
 
 .webix_resize_handle{
 	position: absolute;
+	z-index:2;
 	width: 15px;
 	height: 15px;
 	bottom:0px;
@@ -2086,6 +2093,10 @@ div.webix_modal_cover {
 	padding:4px 10px 4px 4px;
 	margin-left: -4px;
 	.selectLine;
+}
+
+.webix_tree_item.webix_invalid{
+	background-color: #ffeeee;
 }
 
 .webix_tree_checkbox{
@@ -2554,11 +2565,11 @@ div.webix_modal_cover {
 .webix_property_col_ind{
 	float:right;
 	border:1px solid @borderColor;
-	border-radius: 2px;
-	width:30px;
+	border-radius: 3px;
+	width:16px;
 	cursor:pointer;
-	height: 13px;
-	margin: 3px 10px 3px 0;
+	height: 16px;
+	margin: 4px 10px 3px 0;
 }
 
 .webix_property_value {
@@ -6449,6 +6460,7 @@ label.webix_required:after{
 	opacity: 0.5;
 	background: #9169BE;
 	position: absolute;
+	z-index:2;
 
 	transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s;
 	top: 0px; left: 0px;
@@ -6467,6 +6479,22 @@ label.webix_required:after{
 	width: 50%; left: 50%;
 }
 
+
+.panel_icon{
+	position: absolute;
+	z-index: 1;
+	top:5px;  right:5px;
+
+	width:18px;
+	opacity: 0.5;
+	cursor:pointer;
+}
+.panel_target{
+	position: absolute;
+	background: rgba(120, 120, 120, 0.84);
+    box-shadow: 0px 0px 10px 5px #666;
+	z-index: 3;
+}
 @menuShadowColor: rgba(0, 0, 0, 0.05);
 @duration: 0.6s;
 // Left
