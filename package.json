@@ -1,6 +1,6 @@
 {
   "name": "webix-skin-material",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Material skin for Webix UI",
   "main": "index.js",
   "scripts": {
