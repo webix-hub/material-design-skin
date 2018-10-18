@@ -6,7 +6,10 @@ Material Design skin for Webix UI
 
 Live demo - http://webix.com/demos/material/admin-app/index.html#!/app/forms
 
-Skin will work with Webix 2.3+
+Skin will work with Webix 2.3 - 5.4.
+
+From Webix 6.0 you can use a [built-in Material skin](https://docs.webix.com/desktop__material_skin.html), which is the default styling of the library.
+
 
 How to use
 -----------
